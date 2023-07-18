@@ -19,13 +19,14 @@ public class Plant : MonoBehaviour
     void Update()
     {
         
-        if (Vector2.Distance(tr.transform.position, Player.position)< 2.0f) 
+        if (Vector2.Distance(tr.transform.position, Player.position)< 2.0f)
         {
-            rend.material.SetColor("_Color", new Color(0, 204, 102));
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TestText");
         }
             
     }
 }
+// Assets/Scenes/Test Text.unity
 
 
 
