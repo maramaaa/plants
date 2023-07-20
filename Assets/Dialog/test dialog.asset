@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: test dialog
   m_EditorClassIdentifier: Assembly-CSharp::Dialog
   prases:
-  - speaker: loh
-    words: aaaaa
-  - speaker: plant
-    words: I'll eat you
-  - speaker: loh
-    words: AAA
+  - speaker: Player
+    words: OMGAH
+  - speaker: Plant
+    words: '*Chomp* *Munch*'

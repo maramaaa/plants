@@ -24,5 +24,3 @@ public class Textdisplay : MonoBehaviour
         if (num >= dialog.prases.Length) UnityEngine.SceneManagement.SceneManager.LoadScene("Map");
     }
 }
-
-
