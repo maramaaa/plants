@@ -11,6 +11,11 @@ public class Textdisplay : MonoBehaviour
     
     private int num = 0;
     // Update is called once per frame
+
+    private void Start()
+    {
+        dialog = GetComponent<Dialog>();
+    }
     void Update()
     {
         charanterName.text = dialog.prases[num].speaker;

@@ -21,12 +21,13 @@ public class Plant : MonoBehaviour
         
         if (Vector2.Distance(tr.transform.position, Player.position)< 2.0f)
         {
+            Resources.UnloadUnusedAssets();
             UnityEngine.SceneManagement.SceneManager.LoadScene("TestText");
         }
             
     }
 }
-// Assets/Scenes/Test Text.unity
+
 
 
 
