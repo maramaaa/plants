@@ -47,3 +47,6 @@ TagManager:
   - name: New Layer 2
     uniqueID: 3695968735
     locked: 0
+  - name: Objects
+    uniqueID: 3161732779
+    locked: 0

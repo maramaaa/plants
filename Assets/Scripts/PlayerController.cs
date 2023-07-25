@@ -4,36 +4,62 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D body;
 
-    float horizontal;
-    float vertical;
-    float moveLimiter = 0f;
+    public float speed;
+    private Vector2 movement;
+    private Rigidbody2D rb;
+    [SerializeField]
+    private Animator animator;
 
-    public float runSpeed = 20.0f;
-
-    void Start ()
+    private void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        // Gives a value between -1 and 1
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("speed", movement.sqrMagnitude);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
-        {
-            // limit movement speed diagonally, so you move at 70% speed
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
-        } 
-
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
+    //Rigidbody2D body;
+
+    //float horizontal;
+    //float vertical;
+    //float moveLimiter = 0f;
+
+    //public float runSpeed = 20.0f;
+
+    //void Start ()
+    //{
+    //    body = GetComponent<Rigidbody2D>();
+    //}
+
+    //void Update()
+    //{
+    //    // Gives a value between -1 and 1
+    //    horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+    //    vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+    //}
+
+    //void FixedUpdate()
+    //{
+    //    if (horizontal != 0 && vertical != 0) // Check for diagonal movement
+    //    {
+    //        // limit movement speed diagonally, so you move at 70% speed
+    //        horizontal *= moveLimiter;
+    //        vertical *= moveLimiter;
+    //    } 
+
+    //    body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    //}
 }
