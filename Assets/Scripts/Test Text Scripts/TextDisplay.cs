@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 
 public class Textdisplay : MonoBehaviour
 {
@@ -14,10 +15,20 @@ public class Textdisplay : MonoBehaviour
 
     private void Start()
     {
-        dialog = GetComponent<Dialog>();
+
+                
+        string pathRsc = "Assets/Dialog/TestDialog.asset";
+        //AssetDatabase.ImportAsset(pathRsc, ImportAssetOptions.ImportRecursive);
+        var dialPath = AssetDatabase.LoadMainAssetAtPath(pathRsc);
+        AssetDatabase.OpenAsset(dialPath);
+        AssetDatabase.Refresh();
+        //dialog = GetComponent<Dialog>();
+        
+
     }
+    
     void Update()
-    {
+    { 
         charanterName.text = dialog.prases[num].speaker;
         words.text = dialog.prases[num].words;
         if (Input.GetKeyDown("space")) num++;
