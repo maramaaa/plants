@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - groung
-  - characters
-  - 
+  - Characters
+  - Canvas
   - 
   - 
   - 
@@ -38,15 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Canvas
+    uniqueID: 3695968735
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 
+  - name: Characters
     uniqueID: 713743853
     locked: 0
+<<<<<<< HEAD
   - name: New Layer 2
     uniqueID: 3695968735
     locked: 0
   - name: Objects
     uniqueID: 3161732779
     locked: 0
+=======
+>>>>>>> 7393915deda07f5bb47d92fdc2e0319a1c2ca64c
